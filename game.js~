@@ -1,0 +1,101 @@
+var game = new Phaser.Game(640, 750, Phaser.AUTO, 'der_mond', { preload: preload, create: create, update: update, render: render });
+
+function preload() {
+	game.load.tilemap('mapa', 'assets/tilemap.csv', null, Phaser.Tilemap.CSV);
+	game.load.image('background', 'assets/background.png');
+	game.load.image('tiles', 'assets/tiles.png');
+	game.load.spritesheet('mond', 'assets/mond2.png',42,64,2);
+}
+
+var map;
+var layer;
+var player;
+var cursors;
+var bg;
+var jumpTimer = 0;
+var moveTimer = 0;
+var jumpButton;
+var tileset;
+var punkty=0;
+var punkty_max=0;
+var score;
+
+function create() {
+	
+	game.physics.startSystem(Phaser.Physics.ARCADE);
+	game.stage.backgroundColor = '#000000';
+	bg = game.add.tileSprite(0, 0, 640, 750, 'background');
+   	bg.fixedToCamera = true;
+   
+	map = game.add.tilemap('mapa');
+	
+	map.addTilesetImage('tileset','tiles');
+	
+	map.setCollisionByExclusion([0]);
+   
+   layer = map.createLayer(0);
+   layer.resizeWorld();
+   //layer.debug=true;
+   
+   game.physics.arcade.gravity.y = 650;
+   
+   player = game.add.sprite(380,1050,'mond');
+   game.physics.enable(player, Phaser.Physics.ARCADE);
+   player.body.bounce.y = 0.3;
+   player.body.collideWorldBounds = true;
+   player.body.acceleration=2;
+   player.animations.add('left', [1], 10, true);
+   player.animations.add('right', [0], 10, true);
+	player.anchor.setTo(0.5, 0.5);
+	game.camera.follow(player);
+	cursors = game.input.keyboard.createCursorKeys();
+   jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+   var style = { font: "bold 18px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };
+   score = game.add.text(550, 50, "punkty",style);
+   score.fixedToCamera = true;
+	score.cameraOffset.setTo(550, 50);
+}
+
+function update() {
+	game.physics.arcade.collide(player, layer);
+   //bg.tilePosition.x = 2;
+    punkty=parseInt(Math.abs(map.height*30+8-player.body.y).toFixed(0))
+    if(punkty_max<punkty){
+    	punkty_max=punkty;
+    }
+    if(punkty_max-punkty>400){
+    	player.angle=180;
+    }
+	 score.setText(punkty_max);
+    player.body.velocity.x=0;
+   
+       if (cursors.left.isDown)
+    {
+        player.body.velocity.x = -170;
+		  player.animations.play('left');
+
+    }
+    else if (cursors.right.isDown )
+    {
+        player.body.velocity.x = 170;
+		  
+		  player.animations.play('right');
+
+    }
+    
+    if (jumpButton.isDown && player.body.onFloor() && game.time.now > jumpTimer)
+    {
+        player.body.velocity.y = -450;
+        jumpTimer = game.time.now + 1000;
+       
+    }
+
+}
+
+function render () {
+
+    // game.debug.text(game.time.physicsElapsed, 32, 32);
+    // game.debug.body(player);
+    // game.debug.bodyInfo(player, 16, 24);
+
+}

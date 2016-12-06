@@ -1,0 +1,36 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+	
+	<title>Der mond</title>
+    <script src="/der_mond/phaser.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  position: absolute;
+  left: 33%;
+  background-color: red;
+}
+
+    </style>
+</head>
+<body>
+
+<script type="text/javascript" src='/der_mond/game.js'>
+
+
+
+</script>
+
+
+</body>
+
+</html>
