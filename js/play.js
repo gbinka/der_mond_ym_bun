@@ -83,10 +83,10 @@ create:function(){
    player.body.bounce.y = 0.3;
    player.body.collideWorldBounds = true;
    player.body.acceleration=2;
-   player.animations.add('left', [0], 8, true);
+   player.animations.add('left', [3,3,3,3,3,3,3,2,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,1,1,3,3,3], 8, true);
    player.animations.add('jump_left', [0], 10, true);
-   player.animations.add('right', [1], 8, true);
-   player.animations.add('jump_right', [1], 10, true);
+   player.animations.add('right', [4,4,4,4,4,4,4,5,6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,5,6,6,4,4,4], 8, true);
+   player.animations.add('jump_right', [7], 10, true);
    player.anchor.setTo(0.5, 0.5);
    //game.camera.follow(player);
        game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
@@ -99,8 +99,7 @@ create:function(){
    jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
    var style = { font: "bold 18px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };
    score = game.add.text(550, 50, "punkty",style);
-   coords = game.add.text(550, 150, "x,y",style);
-   coords.fixedToCamera = true;
+
    score.fixedToCamera = true;
 	score.cameraOffset.setTo(550, 50);
   player.animations.play('left');
@@ -132,8 +131,9 @@ create:function(){
     punkty=parseInt(Math.abs(map.height*30-player.body.y-100).toFixed(0))
     if(punkty_max<punkty){
     	punkty_max=punkty;
+      score.setText(punkty_max);
     }
-    score.setText(punkty_max);
+    
 
     
     //koniec gry jeśli spadnie na dno
@@ -144,7 +144,7 @@ create:function(){
 
     //kasowanie kafelkow
     var y=Math.floor(player.y/30);
-      coords.setText(start_y-player.y);
+
     var offset=last_deadline-y;
     if (offset>tile_kill){
 
