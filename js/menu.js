@@ -12,7 +12,7 @@ create: function(){
 
 }
 ,start: function(){
-	game.state.start('play')
+	game.state.start('play',true,false,[2])
 
 }
 

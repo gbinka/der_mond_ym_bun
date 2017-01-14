@@ -15,37 +15,55 @@ var punkty_max=0;
 var score;
 var facing;
 var collidable;
-var round;
+var round=0;
 var coords;
 var start_y;
 var animation = 'left'; 
 var last_animation='right';
 var last_deadline;
-var tile_kill=20;
+var tile_kill=25;
 var swy=0;
 var swy_dir='up';
 var falldown=false;
+var map_h;
+var player_last_coords=Array(330,23250);
 
 
 var playState={
 
-create:function(){
-	game.stage.backgroundColor = '#000000';
-	bg = game.add.tileSprite(0, 0, 600, 750, 'background');
+init:function(parm){
+
+  game.stage.backgroundColor = '#000000';
+  if(parm[0]==1)
+    bg_image='background';
+  else if (parm[0]==2)
+    bg_image='background2';
+  bg = game.add.tileSprite(0, 0, 600, 750, bg_image);
+  if (parm[1]==true){
+    start_y=[player_last_coords[0],player_last_coords[1]]
+  }
+}
+,create:function(){
+	
    	bg.fixedToCamera = true;
    
-	map = game.add.tilemap('mapa',30,30);
+	map = game.add.tilemap('mapa');
+  map_h=map.height*30-100;
 
-	start_y=map.height*30-100;
+  if(!start_y){
+	start_y=[380,map_h];
+  }
+
+
   last_deadline=map.height;
-	map.addTilesetImage('tileset','tiles');
+
+	map.addTilesetImage('stopnie','tiles');
 
   
-  
-   layer = map.createLayer(0);
+   layer = map.createLayer('Stopnie');
    layer.resizeWorld();
    //layer.debug=true;
-   this.setTileCollision(layer, [1,2,3], {
+   this.setTileCollision(layer, [2,3,4], {
         top: true,
         bottom: false,
         left: false,
@@ -57,26 +75,31 @@ create:function(){
 
    apples.enableBody = true;
 
-    
-    for (var i = 0; i < 3; i++)
-    {
-        var apple = apples.create(i * 200+100, 0, 'apple');
-        apple.body.gravity.y = 6;
-        apple.body.bounce.y = 0.2 + Math.random() * 0.2;
-    }
+   
+
+  map.createFromObjects('Ficzery', 6, 'pomagacze', 0, true, false, apples);
+  map.createFromObjects('Ficzery', 7, 'pomagacze', 1, true, false, apples);
+  map.createFromObjects('Ficzery', 8, 'pomagacze', 2, true, false, apples);
+  map.createFromObjects('Ficzery', 9, 'pomagacze', 3, true, false, apples);  
+  map.createFromObjects('Ficzery', 10, 'pomagacze', 4, true, false, apples); 
+  map.createFromObjects('Ficzery', 14, 'pomagacze', 5, true, false, apples); 
+  map.createFromObjects('Ficzery', 12, 'pomagacze', 6, true, false, apples); 
+  map.createFromObjects('Ficzery', 11, 'pomagacze', 7, true, false, apples);
 
 
    game.physics.arcade.gravity.y = 650;
    
-   swietlik = game.add.sprite(380,1200,'swietlik');
-   game.physics.enable(swietlik, Phaser.Physics.ARCADE);
-   swietlik.body.collideWorldBounds = true;
-   swietlik.body.bounce.setTo(1, 1);
-   swietlik.body.velocity.x=100;
+   swietliki = game.add.physicsGroup();
+   swietliki.enableBody = true;
+   map.createFromObjects('Przeszkadzacze', 15, 'swietlik', 0, true, false, swietliki);
+   for (var i = 0, len = swietliki.children.length; i < len; i++) { 
+    var swi=swietliki.children[i];
+    swi.body.bounce.setTo(1, 1);
+  } 
+   //swietlik = game.add.sprite(380,1200,'swietlik');
+   game.physics.enable(swietliki, Phaser.Physics.ARCADE);
 
-   swietlik.body.allowGravity =false;
-
-   player = game.add.sprite(380,start_y,'mond');
+   player = game.add.sprite(start_y[0],start_y[1],'mond');
    game.physics.enable(player, Phaser.Physics.ARCADE);
 
    player.body.setSize(65,157,28,2);
@@ -98,7 +121,7 @@ create:function(){
    cursors = game.input.keyboard.createCursorKeys();
    jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
    var style = { font: "bold 18px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };
-   score = game.add.text(550, 50, "punkty",style);
+   score = game.add.text(550, 50, punkty_max,style);
 
    score.fixedToCamera = true;
 	score.cameraOffset.setTo(550, 50);
@@ -120,7 +143,7 @@ create:function(){
   
 
   if (falldown==false){
-    game.physics.arcade.overlap(swietlik, player, this.falldown, null, this);
+    game.physics.arcade.overlap(swietliki, player, this.falldown, null, this);
     game.physics.arcade.collide(player, layer);
   }
   if (round>0){
@@ -131,14 +154,16 @@ create:function(){
     punkty=parseInt(Math.abs(map.height*30-player.body.y-100).toFixed(0))
     if(punkty_max<punkty){
     	punkty_max=punkty;
+      player_last_coords=[player.x,player.y-300]
       score.setText(punkty_max);
     }
-    
+
 
     
     //koniec gry jeśli spadnie na dno
-    if (punkty_max>500 && player.y+100>start_y){
-       
+    if (player.body.velocity.y >1000 && falldown==false || (punkty_max>600 && player.y+100>map_h && falldown==false) ){
+       //if (player.y>player_last_coords[1])
+          //player_last_coords=[player.x,player.y-300]
       this.falldown();
     }
 
@@ -151,7 +176,7 @@ create:function(){
       for (var y=last_deadline; y>last_deadline-offset+tile_kill;y--){
       for (var i = 0; i < 20; i++){
         map.removeTile(i, y);
-      }
+     }
     }
       last_deadline=last_deadline-offset+tile_kill;
     }
@@ -165,7 +190,13 @@ create:function(){
     swy_dir='down';
    if (swy<-100)
     swy_dir='up';
-  swietlik.body.velocity.y=swy;
+
+  for (var i = 0, len = swietliki.children.length; i < len; i++) { 
+    var swi=swietliki.children[i];
+    swi.body.velocity.y=swy;
+  } 
+
+
 
 
     
@@ -214,39 +245,37 @@ create:function(){
     }
 
     
-    if(start_y-player.y<-200){
+    if(map_h-player.y<-200){
         this.gameover();
       }
 
 }
 
-,appleEaten(player,thing){
-	punkty_max=0;
-	punkty=0;
+,appleEaten:function(player,thing){
   thing.kill();
-	player.body.velocity.y = -850;
-  round=60;
+	player.body.velocity.y = thing.power*-1;
+  round+=60;
 
 }
 
-,render(){
+,render:function(){
   //game.debug.body(player);
 }
-,gameover(){
+,gameover:function(){
       falldown=false;
-      player.angle+=180;
+      player.angle=0;
       player.body.collideWorldBounds = true;
-      punkty_max=0;
-      game.state.start('gameover');
+      //punkty_max=0;
+      game.state.start('quiz',true,false,[punkty_max]);
 }
 
-,falldown(){
+,falldown:function(){
       falldown=true;
       player.angle+=180;
       player.body.collideWorldBounds = false;
       
 }
-, setTileCollision(mapLayer, idxOrArray, dirs) {
+, setTileCollision:function(mapLayer, idxOrArray, dirs) {
     var mFunc; 
     if (idxOrArray.length) {
         mFunc = function(inp) {
