@@ -1,0 +1,284 @@
+{"frames": [
+
+{
+	"filename": "aparat.png",
+	"frame": {"x":0,"y":0,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "auto.png",
+	"frame": {"x":148,"y":0,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "buty.png",
+	"frame": {"x":296,"y":0,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "chleb pisanka.png",
+	"frame": {"x":0,"y":148,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "chmura.png",
+	"frame": {"x":148,"y":148,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "dom.png",
+	"frame": {"x":296,"y":148,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "drzewo.png",
+	"frame": {"x":0,"y":296,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "filizanka.png",
+	"frame": {"x":148,"y":296,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "grzebień.png",
+	"frame": {"x":296,"y":296,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "jablco.png",
+	"frame": {"x":0,"y":444,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "jajko.png",
+	"frame": {"x":148,"y":444,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "kapelisz.png",
+	"frame": {"x":296,"y":444,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "kapusta.png",
+	"frame": {"x":0,"y":592,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "kot.png",
+	"frame": {"x":148,"y":592,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "krzeslo.png",
+	"frame": {"x":296,"y":592,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "ksiezyc.png",
+	"frame": {"x":0,"y":740,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "książka.png",
+	"frame": {"x":148,"y":740,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "kurtka.png",
+	"frame": {"x":296,"y":740,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "kwiat.png",
+	"frame": {"x":0,"y":888,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "kwiat2.png",
+	"frame": {"x":148,"y":888,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "lyzka.png",
+	"frame": {"x":296,"y":888,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "marchew.png",
+	"frame": {"x":0,"y":1036,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "motylek2.png",
+	"frame": {"x":148,"y":1036,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "noz.png",
+	"frame": {"x":296,"y":1036,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "pies.png",
+	"frame": {"x":0,"y":1184,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "plot.png",
+	"frame": {"x":148,"y":1184,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "pomidor.png",
+	"frame": {"x":296,"y":1184,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "ppieniadze.png",
+	"frame": {"x":0,"y":1332,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "rower.png",
+	"frame": {"x":148,"y":1332,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "skrzynia.png",
+	"frame": {"x":296,"y":1332,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "slonce.png",
+	"frame": {"x":0,"y":1480,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "stol.png",
+	"frame": {"x":148,"y":1480,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "walizka.png",
+	"frame": {"x":296,"y":1480,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+},
+{
+	"filename": "wiadro.png",
+	"frame": {"x":0,"y":1628,"w":148,"h":148},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+	"sourceSize": {"w":148,"h":148}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "domino_big.png",
+	"format": "RGBA8888",
+	"size": {"w":444,"h":1776},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:af7e0a2afdc63f82a5e619b5509519c3:0005720cb2e015b06210d1e00bf9bd76:1bbd7722f73982707b0fc74212ef0fdd$"
+}
+}

@@ -20,7 +20,7 @@ punkty_max=parms[0];
 
     instr.anchor.setTo(0.5, 0.5);
     instr.alpha = 0;
-    var style = { font: "bold 18px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };
+    var style = { font: "bold 28px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };
     score = game.add.text(300, 10, punkty_max,style);
 
     score.fixedToCamera = true;
@@ -33,13 +33,13 @@ punkty_max=parms[0];
 
 }
 ,createImages: function(){
-	var style = { font: "24px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 148, align: "center" };
+	var style = { font: "48px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 285, align: "center" };
 
 	//var images=[['auto.png','car'],['aparat.png','camera'],["chleb pisanka.png",'bread'],["buty.png",'shoes'],["chmura.png",'cloud'],["drzewo.png",'tree'],["filizanka.png",'cup'],["grzebień.png",'comb']]; //,"dom.png","jablco.png","JAJO.png","kapelisz.png","kapusta.png","kot.png","krzeslo.png","ksiezyc.png","książka.png","kurtka.png","kwiat2.png","kwiat.png","lyzka.png","marchew.png","motylek2.png","noz.png","pies.png","plot.png","pomidor.png","ppieniadze.png","rower.png","skrzynia.png","slonce.png","stol.png","walizka.png","wiadro.png"];
 	
     var images=[['auto.png','s’oüta'],['aparat.png','dy fotogrȧfimȧśin'],["chleb pisanka.png",'s’brut'],["buty.png",'dy śü'],["chmura.png",'s’gywylk'],["drzewo.png",'der boüm'],["filizanka.png",'s’typła'],["grzebień.png",'der komb'],["dom.png","dy hyt"],["jablco.png","der opuł"],["JAJO.png","s’e"],["kapelisz.png","der hüt"],["kapusta.png","s’kroüt"],["kot.png","dy koc"],["krzeslo.png","der śtül"],["ksiezyc.png","der mönd"],["książka.png","s’bihła"],["kurtka.png","dy jak"],["kwiat2.png","s’błimła"],["kwiat.png","s’błimła"],["lyzka.png","der łefuł"],["marchew.png","dy mjen"],["motylek2.png","der mulkjadrymuł"],["noz.png","s’maser"],["pies.png","der hund"],["plot.png","der coün"],["pomidor.png","der pȧrȧdȧjsopuł"],["ppieniadze.png","s’giełd"],["rower.png","s’rod"],["skrzynia.png","dy łod"],["slonce.png","dy zun"],["stol.png","der tejś"],["walizka.png","dy walizk"],["wiadro.png","s’amper"]];
 
-	var slots=[[101,20],[401,20],[101,187],[401,187],[101,374],[401,374],[101,561],[401,561]];
+	var slots=[[0,501],[0,801],[352,501],[352,801],[704,501],[704,801],[1056,501],[1056,801]];
 
 	
 

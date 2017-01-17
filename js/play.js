@@ -24,6 +24,8 @@ var last_deadline;
 var tile_kill=25;
 var swy=0;
 var swy_dir='up';
+var helpers=0;
+var helpers_dir='up';
 var falldown=false;
 var map_h;
 var player_last_coords=Array(330,23250);
@@ -37,18 +39,20 @@ init:function(parm){
   if(parm[0]==1)
     bg_image='background';
   else if (parm[0]==2)
-    bg_image='background2';
-  bg = game.add.tileSprite(0, 0, 600, 750, bg_image);
+    bg_image='background';
+  bg = game.add.tileSprite(0, 0, 1200, 1500, bg_image);
   if (parm[1]==true){
     start_y=[player_last_coords[0],player_last_coords[1]]
   }
 }
 ,create:function(){
 	
-   	bg.fixedToCamera = true;
+
+  game.physics.arcade.gravity.y = 875;
+  bg.fixedToCamera = true;
    
 	map = game.add.tilemap('mapa');
-  map_h=map.height*30-100;
+  map_h=map.height*60-100;
 
   if(!start_y){
 	start_y=[380,map_h];
@@ -71,12 +75,9 @@ init:function(parm){
     });
 
 
-   apples = game.add.group();
-
-   apples.enableBody = true;
-
-   
-
+//Pomagacze
+  apples = game.add.group();
+  apples.enableBody = true;
   map.createFromObjects('Ficzery', 6, 'pomagacze', 0, true, false, apples);
   map.createFromObjects('Ficzery', 7, 'pomagacze', 1, true, false, apples);
   map.createFromObjects('Ficzery', 8, 'pomagacze', 2, true, false, apples);
@@ -86,23 +87,30 @@ init:function(parm){
   map.createFromObjects('Ficzery', 12, 'pomagacze', 6, true, false, apples); 
   map.createFromObjects('Ficzery', 11, 'pomagacze', 7, true, false, apples);
 
+  for (var i = 0, len = apples.children.length; i < len; i++) { 
+    var apple=apples.children[i];
+    apple.body.allowGravity=false;
+  } 
+  
 
-   game.physics.arcade.gravity.y = 650;
+   
    
    swietliki = game.add.physicsGroup();
    swietliki.enableBody = true;
+
    map.createFromObjects('Przeszkadzacze', 15, 'swietlik', 0, true, false, swietliki);
    for (var i = 0, len = swietliki.children.length; i < len; i++) { 
     var swi=swietliki.children[i];
     swi.body.bounce.setTo(1, 1);
   } 
-   //swietlik = game.add.sprite(380,1200,'swietlik');
    game.physics.enable(swietliki, Phaser.Physics.ARCADE);
+
+
 
    player = game.add.sprite(start_y[0],start_y[1],'mond');
    game.physics.enable(player, Phaser.Physics.ARCADE);
 
-   player.body.setSize(65,157,28,2);
+   player.body.setSize(125,314,45,4);
    player.body.bounce.y = 0.3;
    player.body.collideWorldBounds = true;
    player.body.acceleration=2;
@@ -151,10 +159,10 @@ init:function(parm){
     player.angle+=12;
   }
 
-    punkty=parseInt(Math.abs(map.height*30-player.body.y-100).toFixed(0))
+    punkty=parseInt(Math.abs(map.height*60-player.body.y-100).toFixed(0))
     if(punkty_max<punkty){
     	punkty_max=punkty;
-      player_last_coords=[player.x,player.y-300]
+      //player_last_coords=[player.x,player.y-300]
       score.setText(punkty_max);
     }
 
@@ -168,7 +176,7 @@ init:function(parm){
     }
 
     //kasowanie kafelkow
-    var y=Math.floor(player.y/30);
+    var y=Math.floor(player.y/60);
 
     var offset=last_deadline-y;
     if (offset>tile_kill){
@@ -195,7 +203,21 @@ init:function(parm){
     var swi=swietliki.children[i];
     swi.body.velocity.y=swy;
   } 
+  
+  // Helpers movements
+   if (helpers_dir=='up')
+    helpers+=2;
+   else
+    helpers-=2;
+   if (helpers>50)
+    helpers_dir='down';
+   if (helpers<-50)
+    helpers_dir='up';
 
+  for (var i = 0, len = apples.children.length; i < len; i++) { 
+    var apple=apples.children[i];
+    apple.body.velocity.y=helpers;
+  } 
 
 
 
@@ -206,7 +228,7 @@ init:function(parm){
    
        if (cursors.left.isDown)
     {
-        player.body.velocity.x = -170;
+        player.body.velocity.x = -290;
 		    if (facing != 'left')
         {
             animation='left';
@@ -216,7 +238,7 @@ init:function(parm){
     }
     else if (cursors.right.isDown )
     {
-        player.body.velocity.x = 170;
+        player.body.velocity.x = 290;
 		if (facing != 'right')
         {
             
@@ -231,7 +253,7 @@ init:function(parm){
     
     if (jumpButton.isDown && player.body.onFloor() && game.time.now > jumpTimer)
     {
-        player.body.velocity.y = -450;
+        player.body.velocity.y = -740;
         jumpTimer = game.time.now + 500;
           if (facing=='left')
             animation='jump_left';
@@ -252,14 +274,16 @@ init:function(parm){
 }
 
 ,appleEaten:function(player,thing){
+  player_last_coords=Array(thing.body.position.x,thing.body.position.y)
   thing.kill();
 	player.body.velocity.y = thing.power*-1;
-  round+=60;
+  if (thing.power>100)
+    round+=60;
 
 }
 
 ,render:function(){
-  //game.debug.body(player);
+  game.debug.body(player);
 }
 ,gameover:function(){
       falldown=false;
