@@ -3,14 +3,23 @@
 <head> 
 	<meta charset="UTF-8" />
 	<title>Der mond</title>
-    <script src="/der_mond/js/phaser.min.js"></script>
+    <script src="/der_mond/js/phaser.js"></script>
+    <script src="/der_mond/js/jquery-3.1.1.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/der_mond/css/style.css">
+
+
 </head>
 <body>
-<a href='/der_mond/'><img id='home_button' src='/der_mond/assets/icons/home.png'/></a>
-<img id='menu_button' src='/der_mond/assets/icons/Menu_close.png'/>
+<a href='/der_mond/'><span id='home_button' ></span> </a>
+<span id='menu_button' class='open'></span>
+<div id='menu_bar'>
+	<span id='info_button'></span>
+	<span id='rajster_button'></span>
+</div>
 <script type="text/javascript" src="/der_mond/js/boot.js"></script>
 <script type="text/javascript" src='/der_mond/js/load.js'></script>
+<script type="text/javascript" src='/der_mond/js/fake_load.js'></script>
 <script type="text/javascript" src='/der_mond/js/menu.js'></script>
 <script type="text/javascript" src='/der_mond/js/play.js'></script>
 <script type="text/javascript" src='/der_mond/js/gameover.js'></script>
@@ -20,8 +29,58 @@
 
 
 
+
+<script>
+$(document).ready(function() {
+
+$('#menu_button').click(function(){
+	$(this).toggleClass('open close');
+	$('#menu_bar').toggle('slow');
+});
+
+$('#info_button').click(function(){
+	$('canvas').toggle();
+	$('#info_screen').toggle();
+})
+
+
+});
 </script>
 
+
+<div id='info_screen'>
+<img src='/der_mond/assets/icons/info.png'/><br/><br/>
+<p>
+<strong>Wilamowice i język wilamowski</strong><br/>
+Jest takie miasteczko między Bielskiem-Białą a Oświęcimiem, które kryje wiele niezwykłych opowieści. Wilamowice, bo to o nich mowa, są jedyną miejscowością, w której używany jest jeden z najbardziej zagrożonych języków Europy – wymysiöeryś. Założone zostały w XIII wieku przez osadników z Europy Zachodniej. Według przekonań mieszkańców pochodzili oni z terenów Flandrii, Fryzji i Alzacji. Przynieśli ze sobą specyficzny język, który rozwijał się w tym miejscu przez kolejnych siedem wieków. W odróżnieniu od innych okolicznych miejscowości o podobnej genezie w Wilamowicach aż do końca II wojny światowej nie doszło do asymilacji językowej z polszczyzną i niemczyzną. Choć do czasu końca II wojny światowej wilamowski był podstawowym językiem komunikacji dla zdecydowanej większości mieszkańców miasteczka, obecnie sprawnie posługuje się nim zaledwie około trzydziestu, głównie starszych osób. Główną przyczyną tak gwałtownego spadku liczby użytkowników są represje ze strony władz komunistycznych, które w okresie powojennym spotkały mieszkańców Wilamowic. Doprowadziły one do całkowitego usunięcia języka wilamowskiego z przestrzeni publicznej na kilka dziesięcioleci i znacznego ograniczenia międzypokoleniowego przekazu kulturowego i językowego.<p></p>
+Obecnie w Wilamowicach prowadzone są w działania badawcze oraz rewitalizujące język. Stopniowo zmienia się stosunek samych Wilamowian do ich języka. Ustępuje zakorzeniony w okresie komunizmu strach przed mówieniem w wymysiöeryś. Wstyd związany z tożsamością wilamowską przełamywany jest przez takie wydarzenia jak choćby Dzień  języka ojczystego W działania związane z odradzaniem lokalnych tradycji, rewitalizacją języka, kolekcjonowaniem oraz dokumentacją stroju i innych artefaktów kultury materialnej szczególnie zaangażowani są młodzi aktywiści związani ze Stowarzyszeniem “Wilamowianie”. Od 2014 roku w miejscowej szkole można uczęszczać na zajęcia fakultatywne z wymysiöeryś.  Prowadzone są działania we współpracy z lokalnymi i ogólnopolskimi organizacjami oraz uczelniami (m.in. z Wydziałem „Artes Liberales” Uniwersytetu Warszawskiego (lektorat z języka wilamowskiego na dwóch poziomach oraz Instytutem Etnologii i Antropologii Kulturowej Uniwersytetu Warszawskiego).
+Prezentowana gra, to część działań wspierających rewitalizację języka wilamowskiego.<br/>
+Więcej informacji znajdziecie na stronie: www.turystyka.wilamowice.pl<br/></p>
+<p>
+<strong>Legenda o księżycu</strong><br/>
+Ufum Rynk y Wymysoü wiöe ȧ bün. Å mȧkja ging s’öwyts nö woser ym bün. Wi’s yn bün nȧjzoh, zit’s, der mönd ej ym bün. S’füng o cy kekja: Ojeruma, ojezuma nȧ, der mönd ej yn bün gyfoła! Łoüty, kumt hyłfa, der mönd ej yn bün gyfoła! Derwȧjł ej ȧ gywylk ufa mönd kuma, ȧna s’hot ferdakt ȧ mönd. Dy łoüt zan, ȧn der mönd ej ny. No do koma dy bowa ȧn dy kłopa cyzoma. Dy kłopa noma ȧn höka ȧn zy fünga o cy cin. Der höka hot zih uf ȧm śtȧn ogyhaklt, ȧn zy cin ȧn cin. Nöhta łis der śtȧn nöh, füła zy oły ufa hyndyśta. Wi zy ȧzu ymfüła, zan zy ufa hymuł: o, der mönd ej wejder, bo s’gywylk wiöe wȧgganga ȧn der mönd wiöe wejder ufum hymuł.<p></p>
+Na wilamowskim rynku stała niegdyś studnia. Pewna dziewczyna poszła w nocy do niej po wodę. Gdy spojrzała do środka, zobaczyła księżyc. Zaczęła krzyczeć: „Jezus Maria, księżyc wpadł do studni! Ludzie, chodźcie na pomoc, księżyc wpadł do studni!” W tym czasie chmura zakryła księżyc na niebie tak, że nie było go widać. Wokół studni zebrały się kobiety i mężczyźni. Mężczyźni wzięli hak i zaczęli ciągnąć. Hak zahaczył o kamień, a oni ciągną i ciągną. W końcu hak się odblokował i wszyscy upadli. Gdy upadli, popatrzyli na niebo i wykrzyknęli: „O, księżyc jest znowu na niebie!”, gdyż w międzyczasie chmura się przesunęła i odsłoniła księżyc.
+<br/></p>
+
+<p>
+<strong>Informacje o grze</strong><br/>
+Zapraszamy do gry w Der mönd ym bün (po wilamowsku „Księżyc w studni”). Tytuł nawiązuje do wilamowskiej legendy o księżycu , który utopił się w studni. Poprzez skoczną zabawę możecie teraz poznawać słowa i zwroty w języku wilamowskim. <p></p>
+Autorzy: Anna Bińka, Grzegorz Bińka (oprogramowanie), Paulina Białkowska (grafika), Dominika Czerniak (grafika)<p></p>
+Tłumaczenia i konsultacje merytoryczne: Justyna Majerska, Tymoteusz Król<p></p>
+Gra powstała w ramach projektu #Wilamowice mówią realizowanego przez Stowarzyszenie Pracownia Etnograficzna im. Witolda Dynowskiego (www.etnograficzna.pl) we współpracy z  Stowarzyszeniem Na Rzecz Zachowania Dziedzictwa Kulturowego Miasta Wilamowice „Wilamowianie” oraz Wydziałem „Artes Liberales” UW. 
+Dofinansowano ze środków Ministra Kultury i Dziedzictwa Narodowego.<p></p>
+Gra dostępna jest na licencji Creative Commons Uznanie autorstwa-Użycie niekomercyjne 3.0 Polska
+<br/></p>
+<div id='logos'>
+<a href='http://www.etnograficzna.pl'><img src='/der_mond/assets/loga/SPE_logo.png'/></a>
+<a href='http://www.wilamowianie.pl'><img src='/der_mond/assets/loga/wil.png'/></a>
+<a href='http://www.obta.uw.edu.pl'><img src='/der_mond/assets/loga/artes.png'/></a><br/>
+<a href='http://mkidn.gov.pl'><img src='/der_mond/assets/loga/mkidn.png'/></a>
+<a href='https://www.sp.com.pl'><img src='/der_mond/assets/loga/SP_logo_black.png'/></a>
+</div>
+
+
+</div>
 
 </body>
 

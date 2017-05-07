@@ -1,0 +1,7 @@
+Marging maps
+While marging one map part into another you have to:
+1. Add value of height parameter and height parameter of all layers
+2. Join data from data field to the beggining of existing data field
+3. Add nextobjectid of existing part to all new objects and increese existing nextobjectid by new nextobjectid
+4. Increase "y" coordinate value of all existing objects by multiple of height and tileheight of new layer (tileheight should be the same in all parts)
+5. Add objects from objects layers of added part, to existing object layers

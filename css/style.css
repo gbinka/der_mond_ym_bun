@@ -2,6 +2,25 @@ body {
             margin: 0;
         }
 
+
+@font-face{
+font-family: 'latoblack';
+    src: url('fonts/Lato-Black.eot?#iefix') format('embedded-opentype'), 
+         url('fonts/Lato-Black.woff2') format('woff2'), 
+         url('fonts/Lato-Black.woff') format('woff'), 
+         url('fonts/Lato-Black.ttf') format('truetype');
+     }
+
+
+   @font-face {
+    font-family: 'etnocyfraregular';
+    src: url('fonts/etnocyfra-regular-webfont.woff2') format('woff2'),
+         url('fonts/etnocyfra-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html { 
   background: url(/der_mond/assets/background.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -11,13 +30,144 @@ html {
 }
 
 #home_button{
+  display: inline-block;
 	position: absolute;
+  height:42px;
+  width:54px;
 	left:20px;
 	top:20px;
+  background: url(/der_mond/assets/icons/home.png) no-repeat center center;
 }
 
+
 #menu_button{
+  display: inline-block;
 	position: absolute;
 	right:20px;
 	top:20px;
+  height:29px;
+  width:42px;
+}
+
+#menu_button.open{
+  background: url(/der_mond/assets/icons/Menu_open.png) no-repeat center center;
+}
+
+#menu_button.close{
+  background: url(/der_mond/assets/icons/Menu_close.png) no-repeat center center;
+}
+
+#menu_bar{
+  position: absolute;
+  display: none;
+  text-align: right;
+  right:20px;
+  top:80px;
+  height:270px;
+  width:250px;
+}
+
+#info_screen{
+  display:none;
+  color:white;
+  font-family: 'Lato', sans-serif;
+  line-height: 160%;
+  height:85vh;
+  width:50vw;
+  position: fixed;
+  top: 15vh;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -26vw;
+  overflow-y: scroll;
+  padding-right:35px;
+}
+
+#info_button{
+  display: inline-block;
+  width:100px;
+  height:58px;
+  background: url(/der_mond/assets/icons/info.png) no-repeat;
+}
+#info_button:hover{
+  background: url(/der_mond/assets/icons/info_yellow.png) no-repeat;
+}
+
+#rajster_button{
+  display: inline-block;
+  width:227px;
+  height:43px;
+  background: url(/der_mond/assets/icons/Der_rajster.png) no-repeat;
+}
+#rajster_button:hover{
+  background: url(/der_mond/assets/icons/Der_rajster_yellow.png) no-repeat;
+}
+#logos{
+  text-align: center;
+  padding-right:35px;
+}
+#logos img{
+  padding:20px;
+}
+
+@media screen and (max-width: 860px) {
+
+  #rajster_button{
+      height:25px;
+      width:124px;
+      background-size:124px 25px;
+  }
+  #rajster_button:hover{
+      height:25px;
+      width:124px;
+      background-size:124px 25px;
+  }
+
+  #info_button{
+  height:29px;
+  width:50px;  
+  background-size:50px 29px;
+}
+ #info_button:hover{
+  height:29px;
+  width:50px;  
+  background-size:50px 29px;
+}
+
+#menu_bar{
+  width:150px;
+}
+#home_button{
+  height:21px;
+  width:27px;
+  background-size:27px 21px;
+}
+#menu_button.open{
+  height:15px;
+  width:20px;
+  background-size:20px 15px;
+}
+#menu_button.close{
+  height:15px;
+  width:15px;
+  background-size:15px 15px;
+}
+
+
+  }
+
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.5);
 }

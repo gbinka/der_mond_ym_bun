@@ -20,8 +20,8 @@ punkty_max=parms[0];
 
     instr.anchor.setTo(0.5, 0.5);
     instr.alpha = 0;
-    var style = { font: "bold 28px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };
-    score = game.add.text(300, 10, punkty_max,style);
+    var style = { font: "bold 29px latoblack", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };
+    score = game.add.text(600, 10, punkty_max,style);
 
     score.fixedToCamera = true;
 	//score.cameraOffset.setTo(10, 300);
@@ -33,13 +33,117 @@ punkty_max=parms[0];
 
 }
 ,createImages: function(){
-	var style = { font: "48px Arial", fill: "#ffffff", wordWrap: true, wordWrapWidth: 285, align: "center" };
-
+	var style = { font: "32px latoblack", fill: "#ffffff", wordWrap: true, wordWrapWidth: 220, align: "center" };
+	var style_small = { font: "25px latoblack", fill: "#ffffff", wordWrap: true, wordWrapWidth: 220, align: "center" };
 	//var images=[['auto.png','car'],['aparat.png','camera'],["chleb pisanka.png",'bread'],["buty.png",'shoes'],["chmura.png",'cloud'],["drzewo.png",'tree'],["filizanka.png",'cup'],["grzebień.png",'comb']]; //,"dom.png","jablco.png","JAJO.png","kapelisz.png","kapusta.png","kot.png","krzeslo.png","ksiezyc.png","książka.png","kurtka.png","kwiat2.png","kwiat.png","lyzka.png","marchew.png","motylek2.png","noz.png","pies.png","plot.png","pomidor.png","ppieniadze.png","rower.png","skrzynia.png","slonce.png","stol.png","walizka.png","wiadro.png"];
 	
-    var images=[['auto.png','s’oüta'],['aparat.png','dy fotogrȧfimȧśin'],["chleb pisanka.png",'s’brut'],["buty.png",'dy śü'],["chmura.png",'s’gywylk'],["drzewo.png",'der boüm'],["filizanka.png",'s’typła'],["grzebień.png",'der komb'],["dom.png","dy hyt"],["jablco.png","der opuł"],["JAJO.png","s’e"],["kapelisz.png","der hüt"],["kapusta.png","s’kroüt"],["kot.png","dy koc"],["krzeslo.png","der śtül"],["ksiezyc.png","der mönd"],["książka.png","s’bihła"],["kurtka.png","dy jak"],["kwiat2.png","s’błimła"],["kwiat.png","s’błimła"],["lyzka.png","der łefuł"],["marchew.png","dy mjen"],["motylek2.png","der mulkjadrymuł"],["noz.png","s’maser"],["pies.png","der hund"],["plot.png","der coün"],["pomidor.png","der pȧrȧdȧjsopuł"],["ppieniadze.png","s’giełd"],["rower.png","s’rod"],["skrzynia.png","dy łod"],["slonce.png","dy zun"],["stol.png","der tejś"],["walizka.png","dy walizk"],["wiadro.png","s’amper"]];
+    var images=[
+['01.jpg','DY DŻINSAHÖZA'],
+['02.jpg','DER DOÜMA'],
+['03.jpg','DY DRESHÖZA'],
+['04.jpg','DY CUNG'],
+['05.jpg','DER ȦJSBAR'],
+['06.jpg','DER ŚPJELIK'],
+['07.jpg','S’BIHŁA'],
+['08.jpg','DY ŁȦTER'],
+['09.jpg','DY AKYS'],
+['10.jpg','DY KAPÜCBLÜZ'],
+['11.jpg','S’FANSTER'],
+['12.jpg','DY FŁOŚ'],
+['13.jpg','DER BANAN'],
+['14.jpg','DER HOMER'],
+['15.jpg','DY BANK'],
+['16.jpg','S’FAD'],
+['17.jpg','DY ȦNT'],
+['18.jpg','DER BAR'],
+['19.jpg','S’CÖKELA'],
+['20.jpg','DY FON'],
+['21.jpg','DER EROPLON'],
+['22.jpg','S’BET'],
+['23.jpg',' DER FŁIGJAPYŁC'],
+['24.jpg','GYLOKTY ŁÖDA'],
+['25.jpg','DER GIPS'],
+['26.jpg','S’ YNGJELA'],
+['27.jpg','DER GIÖERYL'],
+['28.jpg','DY DRȦJEK'],
+['29.jpg','DY GIÖERELIŚA TWȦGLA'],
+['30.jpg','DY ĆEKÜLAD'],
+['31.jpg','S’ GYŚENK '],
+['32.jpg','DY KAN'],
+['33.jpg','S’GYWYLK'],
+['34.jpg','S’GYZYHT'],
+['35.jpg','DY HANCKJA'],
+['36.jpg','DER HIRYŚ'],
+['37.jpg','DER KRUG'],
+['38.jpg','DY HAND'],
+['39.jpg','DER HȦLIKJY MIKOŁȦJ'],
+['40.jpg','DER FÜS'],
+['41.jpg','DY FŁOSTER'],
+['42.jpg','DER KRAN'],
+['43.jpg','DY KJYŚA'],
+['44.jpg','DER OLIFANT'],
+['45.jpg','DY GANS'],
+['46.jpg','DER HON'],
+['47.jpg','S’ÖWYTRYKLA'],
+['48.jpg','S’PŁACŁA'],
+['49.jpg','DY MȦJTKJA'],
+['50.jpg','DY MYC'],
+['51.jpg','DY NAS'],
+['52.jpg','DER OŚOÜKOST'],
+['53.jpg','S’OÜG'],
+['54.jpg','S’HUNGFYŚŁA'],
+['55.jpg','DY LARW'],
+['56.jpg','DY LAMP'],
+['57.jpg','DY ŁȦKSUŁ'],
+['58.jpg','DER ŁYW'],
+['59.jpg','DY ŁYPA'],
+['60.jpg','S’ŁIHTŁA'],
+['61.jpg','S’KYSŁA'],
+['62.jpg','DER KYNGL'],
+['63.jpg','DER KÜMIN'],
+['64.jpg','S’HEMB'],
+['65.jpg','DER ȦNȦNȦS'],
+['66.jpg','DY KOROLN'],
+['67.jpg','DY FOTOGRȦFIMȦŚIN'],
+['68.jpg','S’OÜTA'],
+['69.jpg','DY ŚÜ'],
+['70.jpg','S’BRUT'],
+['71.jpg','S’GYWYLK'],
+['72.jpg','S’BEJGLȦJZA'],
+['73.jpg','DY HYT'],
+['74.jpg','DER BOÜM'],
+['75.jpg','S’TYPŁA'],
+['76.jpg','DER KOMB'],
+['77.jpg','DER OPUŁ'],
+['78.jpg','DER HÜT'],
+['79.jpg','S’KROÜT'],
+['80.jpg','DY WALIZK'],
+['81.jpg','S’BȦN'],
+['82.jpg','S’ROD'],
+['83.jpg','DY ZUN'],
+['84.jpg','S’E'],
+['85.jpg','DY GOWUŁ'],
+['86.jpg','DER ZȦGJER'],
+['87.jpg','S’AMPER'],
+['88.jpg','DER TEJŚ'],
+['89.jpg','DY ŁOD'],
+['90.jpg','DER PȦRȦDȦJSOPUŁ'],
+['91.jpg','S’GIEŁD'],
+['92.jpg','DY KOC'],
+['93.jpg','DER ŚTÜL'],
+['94.jpg','S’BIHŁA'],
+['95.jpg','DER MÖND'],
+['96.jpg','DY JAK'],
+['97.jpg','S’BŁIMŁA'],
+['98.jpg','DER ŁEFUŁ'],
+['99.jpg','DY MJEN'],
+['100.jpg','DER MULKJADRYMUŁ’'],
+['101.jpg','S’MASER'],
+['102.jpg','DER HUND'],
+['103.jpg','DER COÜN'],
+];
 
-	var slots=[[0,501],[0,801],[352,501],[352,801],[704,501],[704,801],[1056,501],[1056,801]];
+	var slots=[[0,515],[0,841],[324,515],[324,841],[648,515],[648,841],[972,515],[972,841]];
 
 	
 
@@ -62,15 +166,18 @@ punkty_max=parms[0];
 		var rnd_slot=Math.floor(Math.random()*slots.length);
 		x=slots[rnd_slot][0];
 		y=slots[rnd_slot][1];
-		var textfield = game.add.sprite(x, y, 'black_148', img[0]);
+		var textfield = game.add.sprite(x, y, 'black_226', img[0]);
 		
-
+		if (img[1].length>=12)
+			var style_used=style_small;
+		else
+			var style_used=style;
 		textfield.wilamowski=img[1];
 		textfield.inputEnabled = true;
 
 		textfield.events.onInputDown.add(this.imgtinter, this );
 
-		text = game.add.text(textfield.x+textfield.width/2, textfield.y+textfield.height/2, img[1], style);
+		text = game.add.text(textfield.x+textfield.width/2, textfield.y+textfield.height/2, img[1], style_used);
 		textfields.splice(0,0,textfield);
 		texts.splice(0,0,[img[1],text]);
 
@@ -96,7 +203,7 @@ punkty_max=parms[0];
 		answered++;
 		if (answered==5){
 			answered=1;
-			game.state.start('play',true,false,[2,true]);
+			game.state.start('play',true,false,[level,true]);
 		}
 	lastclicked=null;
 	for (var g=0;g<quizimages.length;g++){
